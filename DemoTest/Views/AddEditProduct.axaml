@@ -1,0 +1,93 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="850"
+        x:Class="DemoTest.AddEditProduct"
+        Title="Добавление/редактирование продукции"
+        FontFamily="Comic Sans MS"
+        Width="450"
+        Height="850"
+        Background="#FFFFFF">
+
+	<Window.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="FontFamily" Value="Comic Sans MS"/>
+			<Setter Property="Foreground" Value="#2C3E50"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="Margin" Value="0,5,0,2"/>
+		</Style>
+		<Style Selector="TextBox">
+			<Setter Property="FontFamily" Value="Comic Sans MS"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="Padding" Value="8"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="#ABCFCE"/>
+			<Setter Property="Background" Value="#FFFFFF"/>
+			<Setter Property="Foreground" Value="#2C3E50"/>
+			<Setter Property="CornerRadius" Value="4"/>
+		</Style>
+		<Style Selector="ComboBox">
+			<Setter Property="FontFamily" Value="Comic Sans MS"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="Padding" Value="8"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="#ABCFCE"/>
+			<Setter Property="Background" Value="#FFFFFF"/>
+			<Setter Property="Foreground" Value="#2C3E50"/>
+			<Setter Property="CornerRadius" Value="4"/>
+		</Style>
+		<Style Selector="Button">
+			<Setter Property="FontFamily" Value="Comic Sans MS"/>
+			<Setter Property="Background" Value="#546F94"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Padding" Value="15,10"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="CornerRadius" Value="8"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+		</Style>
+		<Style Selector="Button:pointerover">
+			<Setter Property="Background" Value="#465A7A"/>
+		</Style>
+		<Style Selector="Button:pressed">
+			<Setter Property="Background" Value="#3A4B65"/>
+		</Style>
+	</Window.Styles>
+
+	<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+          Margin="20"
+          Background="#FFFFFF">
+
+		<TextBlock Grid.Row="0" Text="Артикул*" FontWeight="Bold"/>
+		<TextBox Grid.Row="1" x:Name="tbArticle" Margin="0,0,0,10"/>
+
+		<TextBlock Grid.Row="2" Text="Наименование*" FontWeight="Bold"/>
+		<TextBox Grid.Row="3" x:Name="tbProductName" Margin="0,0,0,10"/>
+
+		<TextBlock Grid.Row="4" Text="Тип продукции" FontWeight="Bold"/>
+		<ComboBox Grid.Row="5" x:Name="cbProductType" Margin="0,0,0,10"/>
+
+		<TextBlock Grid.Row="6" Text="Минимальная цена для партнера*" FontWeight="Bold"/>
+		<TextBox Grid.Row="7" x:Name="tbMinPartnerPrice" Margin="0,0,0,10"
+                 ToolTip.Tip="Цена должна быть положительным числом с точностью до сотых (например: 1500.50)"/>
+
+		<TextBlock Grid.Row="8" Text="Ширина рулона*" FontWeight="Bold"/>
+		<TextBox Grid.Row="9" x:Name="tbRollWidth" Margin="0,0,0,10"
+                 ToolTip.Tip="Ширина должна быть положительным числом с точностью до сотых (например: 1.50)"/>
+
+		<TextBlock Grid.Row="10" Text="Время производства (часы)" FontWeight="Bold"/>
+		<TextBox Grid.Row="11" x:Name="tbProductionTime" Margin="0,0,0,10"/>
+
+		<TextBlock Grid.Row="12" Text="Цех" FontWeight="Bold"/>
+		<TextBox Grid.Row="13" x:Name="tbWorkshopNumber" Margin="0,0,0,10"/>
+
+		<TextBlock Grid.Row="14" Text="Количество рабочих" FontWeight="Bold"/>
+		<TextBox Grid.Row="15" x:Name="tbWorkersCount" Margin="0,0,0,10"/>
+
+		<TextBlock Grid.Row="16" Text="Описание" FontWeight="Bold"/>
+		<TextBox Grid.Row="17" x:Name="tbDescription" Height="80" AcceptsReturn="True" TextWrapping="Wrap" Margin="0,0,0,20"/>
+
+		<Button Grid.Row="18" Content="Сохранить" Click="SaveButton_Click" HorizontalAlignment="Center" Width="150" HorizontalContentAlignment="Center"/>
+	</Grid>
+</Window>

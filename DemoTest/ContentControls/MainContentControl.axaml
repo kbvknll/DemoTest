@@ -1,0 +1,73 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="DemoTest.MainContentControl"
+             FontFamily="Comic Sans MS">
+
+	<UserControl.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="FontFamily" Value="Comic Sans MS"/>
+		</Style>
+		<Style Selector="Button">
+			<Setter Property="FontFamily" Value="Comic Sans MS"/>
+			<Setter Property="Background" Value="#546F94"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Padding" Value="20,12"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="CornerRadius" Value="8"/>
+			<Setter Property="Margin" Value="10,5"/>
+			<Setter Property="FontSize" Value="14"/>
+		</Style>
+		<Style Selector="Button:pointerover">
+			<Setter Property="Background" Value="#465A7A"/>
+		</Style>
+		<Style Selector="Button:pressed">
+			<Setter Property="Background" Value="#3A4B65"/>
+		</Style>
+		<Style Selector="Button.back-button">
+			<Setter Property="Background" Value="#ABCFCE"/>
+			<Setter Property="Foreground" Value="#2C3E50"/>
+			<Setter Property="Padding" Value="15,8"/>
+			<Setter Property="Margin" Value="5"/>
+		</Style>
+		<Style Selector="Button.back-button:pointerover">
+			<Setter Property="Background" Value="#9BBFBD"/>
+		</Style>
+	</UserControl.Styles>
+
+	<Grid Background="#FFFFFF">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Background="#ABCFCE" Padding="10">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="0"
+                        x:Name="btnBack"
+                        Content="← Назад"
+                        Click="BackButton_Click"
+                        Classes="back-button"
+                        IsEnabled="False"/>
+
+				<StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+					<Button Content="Продукция" x:Name="btnProducts" Click="ProductsButton_Click"/>
+					<Button Content="Материалы" x:Name="btnMaterials" Click="MaterialsButton_Click_1"/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+				</StackPanel>
+			</Grid>
+		</Border>
+
+		<ContentControl Grid.Row="1" x:Name="ContentControl" Background="#FFFFFF"/>
+	</Grid>
+</UserControl>
